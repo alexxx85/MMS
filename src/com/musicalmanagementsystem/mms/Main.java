@@ -1,5 +1,10 @@
 package com.musicalmanagementsystem.mms;
 
-public class Main {
+import com.musicalmanagementsystem.gui.MainGui;
 
+public class Main {
+	
+	public static void main(String[] args) {
+		MainGui.main(args);
+	}
 }
