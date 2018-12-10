@@ -9,10 +9,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.scene.web.WebEngine;
@@ -29,10 +33,12 @@ public class MainGui extends Application {
 	@FXML public Tab tabMainPage;
 	@FXML public Tab tabTasks;
 	@FXML public Hyperlink linkToDonatePage;
+	@FXML public Label donateHeartLabel;
 	
 	// VARIABLES
 	boolean hasBeenClicked = false;
 	WebEngine webEngine = new WebEngine();
+	Image donateHeartPng = new Image("donateHeart.png");
 	
 	
 	// METHODS
@@ -54,6 +60,9 @@ public class MainGui extends Application {
 		Parent root = (Parent) loader.load();
 	    
 		Scene scene = new Scene(root);
+		
+		// SUBMETHODS
+		donateHeartLabel.setBackground(new Background(new BackgroundImage(donateHeartPng, null, null, null, null)));;
 		
 		// EVENTS FROM GUI
 		/*
