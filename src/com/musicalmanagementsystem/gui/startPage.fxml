@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -13,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -30,7 +31,7 @@
             <SeparatorMenuItem mnemonicParsing="false" />
             <MenuItem mnemonicParsing="false" text="Preferences…" />
             <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Quit" />
+            <MenuItem fx:id="fileMenuQuitButton" mnemonicParsing="false" text="Quit" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Edit">
@@ -54,9 +55,34 @@
         </Menu>
       </menus>
     </MenuBar>
-      <TabPane prefHeight="583.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane fx:id="mainTabPane" prefHeight="583.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Tasks">
+          <Tab fx:id="tabMainPage" text="Main Page">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="900.0">
+                     <children>
+                        <Pane layoutX="-2.0" prefHeight="538.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Pane layoutX="129.0" layoutY="373.0" style="-fx-background-color: cccccc; -fx-background-radius: 4;">
+                                 <children>
+                                    <Text fx:id="linkToTaskTab" fill="#5a595b" layoutY="16.0" stroke="BLACK" strokeLineJoin="BEVEL" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-underline: false;" text="View Current Tasks" textAlignment="CENTER" wrappingWidth="199.06640625">
+                                       <font>
+                                          <Font name="Arial" size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="14.0" layoutY="440.0" prefHeight="96.0" prefWidth="115.0">
+                                 <children>
+                                    <Hyperlink id="donateHyperlink" fx:id="linkToDonatePage" layoutX="-1.0" prefHeight="96.0" prefWidth="118.0" style="-fx-background-image: url(&quot;donateHeart.png&quot;); -fx-background-size: stretch;" styleClass="donateHyperlink" stylesheets="@style.css" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="tabTasks" text="Tasks">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -77,11 +103,6 @@
                         </VBox>
                      </children>
                   </AnchorPane>
-            </content>
-          </Tab>
-          <Tab text="Other">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="900.0" />
             </content>
           </Tab>
         </tabs>
