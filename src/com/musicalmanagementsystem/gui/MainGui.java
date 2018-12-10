@@ -37,7 +37,6 @@ public class MainGui extends Application {
 	
 	// VARIABLES
 	boolean hasBeenClicked = false;
-	WebEngine webEngine = new WebEngine();
 	Image donateHeartPng = new Image("donateHeart.png");
 	
 	
@@ -98,17 +97,6 @@ public class MainGui extends Application {
 			@Override
 			public void handle(ActionEvent e) {
 				stage.close();
-			}
-		});
-		
-		/*
-		 * Link to donate page (currently links to Trello
-		 * TODO unlink this from trello
-		 */
-		linkToDonatePage.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent arg0) {
-				webEngine.load("https://trello.com/b/ct0vhYMj/mms");
 			}
 		});
 		
